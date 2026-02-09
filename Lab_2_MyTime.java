@@ -1,4 +1,11 @@
-// Lab_1_MyTime.java
+/*Напишите клиент этого класса — программу, которая создает три объекта
+типа MyTime (с помощью new MyTime(), new MyTime(555550000) и new MyTime(5, 23,
+55)) и отображает значениях их полей данных hour, minute и second в
+формате часы:минуты:секунды.
+(Подсказка: первые два конструктора извлекут значения hour, minute и second из
+прошедшего времени. Для безаргументного конструктора текущее время может быть
+получено с помощью метода System.currentTimeMillis())*/
+
 public class Lab_2_MyTime {
     public static void main(String[] args)
     {
