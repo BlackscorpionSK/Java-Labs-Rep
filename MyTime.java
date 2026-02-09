@@ -1,22 +1,6 @@
-/*
-Создайте класс MyTime для представления времени. Класс MyTime должен содержать:
-Поля данных hour, minute и second, которые представляют время.
-Безаргументный конструктор, который создает объект типа MyTime для текущего
-времени. (Значения полей данных этого объекта представляют текущее время.)
-Конструктор, который создает объект типа MyTime с указанным временем в
-миллисекундах, прошедших с 00:00, 1 января 1970 г. (Значения полей данных этого
-объекта будут представлять это время.)
-Конструктор, который создает объект типа MyTime с указанными часами,
-минутами и секундами.
-Три getter-метода для полей данных hour, minute и second соответственно.
-Метод с именем setTime(long elapseTime), который присваивает объекту новое
-время с помощью прошедшего времени. Например, если прошедшее время
-равно 555550000 миллисекундам, то hour равно 10, minute равно 19,
-а second равно 10.
-*/
 
-public class MyTime
-{
+public class MyTime {
+
     private int hour;
     private int minute;
     private int second;
@@ -39,24 +23,32 @@ public class MyTime
         this.second = second;
     }
 
-    public int getHour() {
+    public int getHour()
+    {
+        this.hour = hour;
         return hour;
     }
-
-    public int getMinute() {
+    public int getMinute()
+    {
+        this.minute = minute;
         return minute;
     }
-
-    public int getSecond() {
+    public int getSecond()
+    {
+        this.second = second;
         return second;
     }
 
     public void setTime(long elapseTime)
     {
-        long TotalSecond = currentTimeMillis / 1000;
-        this.second = (int) TotalSecond % 60;
-        long TotalMinute = TotalSecond / 60;
-        this.minute = (int) TotalMinute % 60;
+        long totalSeconds = elapseTime / 1000;
+        this.second = (int) totalSeconds % 60;
 
+        long totalMinutes = totalSeconds / 60;
+        this.minute = (int) totalMinutes % 60;
+
+        long totalHours = totalMinutes / 60;
+        this.hour = (int) totalHours % 24;
     }
+
 }
